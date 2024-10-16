@@ -1,45 +1,86 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <cmath>
+
 using namespace std;
 
-int main()
+int main() 
 {
-    int N1, N2, N3;
+    double num1, num2;
     char operation;
+    char choice;
 
-    cout << "Enter the first number: ";
-    cin >> N1;
-
-    cout << "Enter the second number: ";
-    cin >> N2;
-
-    cout << "Enter the operation (+, -, *, /): ";
-    cin >> operation;
-
-    switch (operation)
+    while (true)
     {
-    case '*':
-        cout << N1 << " * " << N2 << " = " << N1 * N2 << endl;
-        break;
-    case '+':
-        cout << N1 << " + " << N2 << " = " << N1 + N2 << endl;
-        break;
-    case '-':
-        cout << N1 << " - " << N2 << " = " << N1 - N2 << endl;
-        break;
-    case '/':
-        if (N2 != 0) 
+        cout << "Enter your first number: ";
+        if (!(cin >> num1)) 
         {
-            cout << N1 << " / " << N2 << " = " << N1 / N2 << endl;
+            cout << "ERROR" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
         }
-        else 
-        {
-            cout << "Error: Division by zero!" << endl;
-        }
-        break;
-    default:
-        cout << "Invalid operation!" << endl;
-    }
 
+        cout << "Enter your second number: ";
+        if (!(cin >> num2)) 
+        {
+            cout << "ERROR" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+
+        cout << "Chose the operation (+, -, *, /, %, ^): ";
+        cin >> operation;
+
+        switch (operation) 
+        {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+            break;
+            case
+            '/':
+                if (num2 == 0) 
+                {
+                    cout
+                        << "ERROR ZERO" << endl;
+                }
+                else 
+                {
+                    cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
+                }
+                break;
+            case '%':
+                if (int(num2) == 0) 
+                {
+                    cout << "ERROR ZERO" << endl;
+                }
+                else 
+                {
+                    cout << static_cast<int>(num1) << " % " << static_cast<int>(num2) << " = " << static_cast<int>(num1) % static_cast<int>(num2) << endl;
+                }
+                break;
+            case '^':
+                cout << num1 << " ^ " << num2 << " = " << pow(num1, num2) << endl;
+                break;
+            default:
+                cout << "ERROR" << endl;
+        }
+
+        cout << "Continue? (y/n): ";
+        cin >> choice;
+
+        if (choice != 'y' && choice != 'Y') 
+        {
+            cout << "bye bye"; 
+            break;
+        }
+
+    }
     return 0;
 }
