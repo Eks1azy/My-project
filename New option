@@ -1,3 +1,12 @@
 Checking for non-numeric values.
 Clearing the input stream. If the input was incorrect, clear the input stream
 Infinite loop for repeated calculations.
+
+
+**soon**
+Fix % operation, 
+bug:
+Enter your first number: 5.2
+Enter your second number: 2
+Chose the operation (+, -, *, /, %, ^): %
+5 % 2 = 1
