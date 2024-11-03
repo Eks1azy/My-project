@@ -1,0 +1,149 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    overflow: hidden;
+    /* transform: scale(1.5); */
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px; /* Расстояние между кнопками */
+  }
+
+  .btn {
+    border: 12px solid #e6afda;
+  }
+  
+  /* button 1*/
+  .btb {
+    margin: 100px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+  }
+  .btb::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  /* glow */
+  .btb::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .btb:hover::before {
+    opacity: 1;
+  }
+  
+  .btb:active:after {
+    background: transparent;
+  }
+  
+  .btb:active {
+    color: #000;
+    font-weight: bold;
+  }
+
+  /* button 2*/
+  .btb1 {
+    margin: 100px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+  }
+  .btb1::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  /* glow */
+  .btb1::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff5ed9, #ff08f3, #830064, #b40aa0,
+      #ffcbfc, #e790ff, #ff00c8, #ffa2d5
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .btb1:hover::before {
+    opacity: 1;
+  }
+  
+  .btb1:active:after {
+    background: transparent;
+  }
+  
+  .btb1:active {
+    color: #000000;
+    font-weight: bold;
+  }
